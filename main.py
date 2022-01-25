@@ -17,17 +17,25 @@ for turtle_index in range(0, 6):
     Andy.goto(x=-220, y= 150- turtle_index * 60)
     all_turtles.append(Andy)
 
-if user_bet:
-    race_on = True
 
-while race_on:
-    for turtle in all_turtles:
-        if turtle.xcor() > 230:
-            winer = turtle.color()
-            race_on = False
-        distance = random.randint(0, 10)
-        turtle.forward(distance)
+def race():
+    if user_bet:
+        race_on = True
+    while race_on:
+        for turtle in all_turtles:
+            if turtle.xcor() > 230:
+                winner = turtle.color()
+                race_on = False
+            distance = random.randint(0, 10)
+            turtle.forward(distance)
+    retun winner
 
+win = race()
+if win == user_bet:
+    print('You won!')
+else:
+    print(f'You lose!')
+ print(f'The {win} turtle is the winner!')
 
 
 screen.exitonclick()
