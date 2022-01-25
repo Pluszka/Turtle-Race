@@ -43,11 +43,18 @@ def checking(win, user_bet):
         print(f'You lose!')
     print(f'The {win} turtle is the winner!')
 
+def cleaner(spirits):
+    for spirit in spirits:
+        spirit.ht()
+
 def game():
     all_turtles = creating_turts()
     checking(correct_input(), race(all_turtles))
+    print('Press space to play again.')
+    cleaner(all_turtles)
+    screen.listen()
+    screen.onkey(key='space', fun=game)
 
 game()
-
 
 screen.exitonclick()
