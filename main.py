@@ -20,9 +20,10 @@ def creating_turts():
         Andy = Turtle(shape='turtle')
         Andy.color(COLORS[turtle_index])
         Andy.penup()
-        Andy.goto(x=-220, y= 150- turtle_index * 60)
+        Andy.goto(x=-220, y=150- turtle_index * 60)
         turtles.append(Andy)
     return turtles
+
 
 def race(participants):
     race_on = True
@@ -43,9 +44,11 @@ def checking(win, user_bet):
         print(f'You lose!')
     print(f'The {win} turtle is the winner!')
 
+
 def cleaner(spirits):
     for spirit in spirits:
         spirit.ht()
+
 
 def game():
     all_turtles = creating_turts()
@@ -56,5 +59,4 @@ def game():
     screen.onkey(key='space', fun=game)
 
 game()
-
 screen.exitonclick()
