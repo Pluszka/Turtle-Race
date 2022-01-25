@@ -24,10 +24,10 @@ def creating_turts():
         turtles.append(Andy)
     return turtles
 
-def race():
+def race(participants):
     race_on = True
     while race_on:
-        for turtle in all_turtles:
+        for turtle in participants:
             if turtle.xcor() > 230:
                 winner = turtle.color()[0]
                 race_on = False
@@ -43,9 +43,11 @@ def checking(win, user_bet):
         print(f'You lose!')
     print(f'The {win} turtle is the winner!')
 
-all_turtles = creating_turts()
-checking(correct_input(), race())
+def game():
+    all_turtles = creating_turts()
+    checking(correct_input(), race(all_turtles))
 
+game()
 
 
 screen.exitonclick()
