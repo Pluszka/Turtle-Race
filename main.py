@@ -30,12 +30,12 @@ def race():
             turtle.forward(distance)
     return winner
 
-win = race()
+win = race()[0]
 if win == user_bet:
     print('You won!')
 else:
     print(f'You lose!')
- print(f'The {win} turtle is the winner!')
+print(f'The {win} turtle is the winner!')
 
 
 screen.exitonclick()
