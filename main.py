@@ -28,7 +28,7 @@ def race():
                 race_on = False
             distance = random.randint(0, 10)
             turtle.forward(distance)
-    retun winner
+    return winner
 
 win = race()
 if win == user_bet:
